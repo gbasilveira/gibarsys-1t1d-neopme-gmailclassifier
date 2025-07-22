@@ -12,7 +12,7 @@ natural-language rule authoring and RAG-based classification.
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-org/gmail-graph-classifier.git
+git clone [https://github.com/your-org/gmail-graph-classifier.git](https://github.com/gbasilveira/gibarsys-1t1d-neopme-gmailclassifier.git)
 cd gmail-graph-classifier
 # follow docs/06_setup_local_dev.md
 ```
