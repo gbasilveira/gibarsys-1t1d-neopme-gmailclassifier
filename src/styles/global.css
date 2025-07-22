@@ -1,0 +1,157 @@
+/* Global CSS for Gmail Graph-Classifier Add-on */
+/* Following FluentUI design guidelines */
+
+:root {
+  /* Primary Colors */
+  --colorBrandBackground: #0F6CBD;
+  --colorBrandBackgroundHover: #115EA3;
+  --colorBrandBackgroundPressed: #0E4775;
+  --colorBrandForeground1: #0F6CBD;
+  --colorBrandForeground2: #2B88D8;
+
+  /* Semantic Colors */
+  --colorNeutralBackground1: #FFFFFF;
+  --colorNeutralBackground2: #FAFAFA;
+  --colorNeutralBackground3: #F5F5F5;
+  --colorNeutralForeground1: #242424;
+  --colorNeutralForeground2: #616161;
+  --colorNeutralForeground3: #C8C8C8;
+
+  /* Status Colors */
+  --colorPaletteGreenForeground1: #107C10;
+  --colorPaletteRedForeground1: #D13438;
+  --colorPaletteYellowForeground1: #FDE047;
+  --colorPaletteBlueForeground1: #0F6CBD;
+
+  /* Typography Scale */
+  --fontFamilyBase: 'Segoe UI Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fontSizeBase: 14px;
+  --fontSizeSmall: 12px;
+  --fontSizeLarge: 16px;
+  --fontSizeXLarge: 20px;
+  --fontSizeXXLarge: 28px;
+
+  /* Spacing */
+  --spacingXXS: 2px;
+  --spacingXS: 4px;
+  --spacingS: 8px;
+  --spacingM: 16px;
+  --spacingL: 24px;
+  --spacingXL: 32px;
+  --spacingXXL: 48px;
+
+  /* Border Radius */
+  --borderRadiusSmall: 2px;
+  --borderRadiusMedium: 4px;
+  --borderRadiusLarge: 8px;
+
+  /* Shadows */
+  --shadow2: 0 0.5px 1px 0 rgba(0, 0, 0, 0.13), 0 0 1px 0 rgba(0, 0, 0, 0.11);
+  --shadow4: 0 2px 4px 0 rgba(0, 0, 0, 0.13), 0 0 1px 0 rgba(0, 0, 0, 0.11);
+  --shadow8: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 0 1px 0 rgba(0, 0, 0, 0.11);
+  --shadow16: 0 8px 16px 0 rgba(0, 0, 0, 0.13), 0 0 1px 0 rgba(0, 0, 0, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase);
+  line-height: 1.5;
+  color: var(--colorNeutralForeground1);
+  background-color: var(--colorNeutralBackground1);
+}
+
+/* Typography Classes */
+.text-title-1 {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeXXLarge);
+  font-weight: 600;
+  line-height: 36px;
+  color: var(--colorNeutralForeground1);
+}
+
+.text-title-2 {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeXLarge);
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--colorNeutralForeground1);
+}
+
+.text-title-3 {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeLarge);
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--colorNeutralForeground1);
+}
+
+.text-body-1 {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeBase);
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--colorNeutralForeground1);
+}
+
+.text-body-2 {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--fontSizeSmall);
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--colorNeutralForeground2);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacingM);
+}
+
+.card {
+  background: var(--colorNeutralBackground1);
+  border: 1px solid var(--colorNeutralBackground3);
+  border-radius: var(--borderRadiusMedium);
+  box-shadow: var(--shadow2);
+  padding: var(--spacingM);
+}
+
+.card-elevated {
+  background: var(--colorNeutralBackground1);
+  border: 1px solid var(--colorNeutralBackground3);
+  border-radius: var(--borderRadiusMedium);
+  box-shadow: var(--shadow8);
+  padding: var(--spacingM);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--colorBrandBackground);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --colorNeutralForeground1: #000000;
+    --colorNeutralForeground2: #000000;
+    --colorNeutralBackground1: #FFFFFF;
+    --colorNeutralBackground2: #FFFFFF;
+  }
+}
