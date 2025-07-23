@@ -1,7 +1,5 @@
 # Gmail Graph-Classifier Add-on
 
-## Technical Overview
-
 The Gmail Graph-Classifier Add-on is an AI-powered email classification system that automatically categorizes Gmail threads using custom labels based on a knowledge graph of People, Projects, Topics, and Companies. The system combines natural language processing, graph-based reasoning, and large language model capabilities to provide intelligent email organization.
 
 **Business Value**: Reduces email management overhead by automatically applying contextually relevant labels, enabling users to focus on high-priority communications and maintain organized inboxes without manual categorization.
