@@ -40,7 +40,37 @@ This document defines UI component specifications and interface standards for th
 
 ## Component Specifications
 
-*Detailed component specifications using vanilla Fluent UI components will be added during development.*
+### Gmail Add-on Interface Components
+
+#### ClassificationCard Component
+- **Purpose**: Display email classification results with confidence scores
+- **Structure**: Card header, content sections, and action buttons
+- **Fluent UI Pattern**: Card layout with structured content hierarchy
+- **Implementation**: `createClassificationCard()` in `/src/gmail-addon/ui-components.js`
+
+#### PlaceholderCard Component
+- **Purpose**: Welcome screen and initial state display
+- **Structure**: Header, welcome message, instructions, and status
+- **Fluent UI Pattern**: Informational card with clear content hierarchy
+- **Implementation**: `createPlaceholderCard()` in `/src/gmail-addon/ui-components.js`
+
+#### ErrorCard Component
+- **Purpose**: User-friendly error handling and recovery options
+- **Structure**: Error header, message display, and action buttons
+- **Fluent UI Pattern**: Alert card with retry mechanisms
+- **Implementation**: `createErrorCard()` in `/src/gmail-addon/ui-components.js`
+
+#### LoadingCard Component
+- **Purpose**: Progress indication during classification operations
+- **Structure**: Loading header, progress message, and status updates
+- **Fluent UI Pattern**: Progress card with clear status communication
+- **Implementation**: `createLoadingCard()` in `/src/gmail-addon/ui-components.js`
+
+### Action Button Specifications
+- **Primary Actions**: "Classify Email", "Apply Labels", "Reclassify"
+- **Secondary Actions**: "Retry", "Get Help", "Refresh"
+- **Styling**: Standard CardService button styling (Fluent UI compatible)
+- **Behavior**: Immediate feedback through notifications and card updates
 
 ## Related Documentation
 

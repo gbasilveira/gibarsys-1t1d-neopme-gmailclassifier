@@ -37,7 +37,23 @@ This document defines development practices and code quality standards for the G
 
 ## Quality Standards
 
-*Detailed coding standards, testing requirements, and quality assurance practices will be defined during development.*
+### Test-Driven Development
+- **Coverage Requirement**: 100% test coverage for all code paths
+- **Testing Framework**: Jest with Google Apps Script mocking
+- **Test Structure**: Unit, integration, and UI component tests
+- **Test Location**: `/tests/` directory with parallel structure to `/src/`
+
+### Google Apps Script Standards
+- **Manifest Configuration**: Proper OAuth scopes and trigger definitions
+- **Error Handling**: Graceful degradation with user-friendly error messages
+- **Performance**: Efficient CardService usage and minimal API calls
+- **Documentation**: JSDoc comments for all functions and modules
+
+### Code Quality Enforcement
+- **Linting**: ESLint with recommended rules and custom configurations
+- **Type Safety**: JSDoc type annotations for better IDE support
+- **Modular Design**: Small, focused files with clear separation of concerns
+- **Version Control**: Structured commits following established Git workflow
 
 ## Related Documentation
 

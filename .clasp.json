@@ -1,0 +1,9 @@
+{
+  "scriptId": "",
+  "rootDir": "./src/gmail-addon",
+  "filePushOrder": [
+    "appsscript.json",
+    "main.js",
+    "ui-components.js"
+  ]
+}

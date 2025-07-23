@@ -36,7 +36,45 @@ This document outlines testing approaches and quality assurance practices for th
 
 ## Testing Implementation
 
-*Detailed testing strategies, frameworks, and implementation patterns will be defined during development.*
+### Gmail Add-on Testing Framework
+
+#### Test Structure
+- **Framework**: Jest with Node.js test environment
+- **Mocking**: Google Apps Script services (CardService, GmailApp)
+- **Coverage**: 100% requirement for branches, functions, lines, and statements
+- **Location**: `/tests/gmail-addon/` with parallel structure to source
+
+#### Test Categories
+
+##### Unit Tests (`main.test.js`)
+- **onGmailMessage()**: Message trigger function testing
+- **onComposeClassify()**: Compose trigger function testing
+- **buildClassificationCard()**: Card building logic testing
+- **Error Handling**: Exception scenarios and graceful degradation
+
+##### UI Component Tests (`ui-components.test.js`)
+- **createClassificationCard()**: Classification display testing
+- **createPlaceholderCard()**: Welcome screen testing
+- **createErrorCard()**: Error handling UI testing
+- **createLoadingCard()**: Loading state testing
+
+##### Integration Tests (Planned)
+- End-to-end workflow testing
+- Gmail API integration testing
+- n8n service integration testing
+
+#### Mock Configuration
+- **CardService**: Complete CardService API mocking with chainable methods
+- **GmailApp**: Gmail service mocking for message and thread access
+- **Console**: Logging service mocking for debug output
+- **Setup**: Global test setup in `/tests/setup.js`
+
+#### Test Execution
+```bash
+npm test           # Run all tests
+npm run test:watch # Watch mode for development
+npm run test:coverage # Generate coverage reports
+```
 
 ## Related Documentation
 

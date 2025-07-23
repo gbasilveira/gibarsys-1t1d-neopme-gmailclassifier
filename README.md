@@ -35,24 +35,28 @@ The system follows a layered architecture with clear separation of concerns:
 
 ## Source Code Navigation
 
-*Note: Source code directories will be established during development phase*
-
 ### Core Components
-- `/src/` - Main source code directory (to be created)
-- `/tests/` - Test suites and quality assurance (to be created)
-- `/docs/` - Project documentation and guidelines
+- [`/src/gmail-addon/`](src/gmail-addon/) - Gmail Add-on implementation with Google Apps Script
+- [`/tests/`](tests/) - Test suites and quality assurance with 100% TDD coverage
+- [`/docs/`](docs/) - Project documentation and guidelines
 
-### Key Modules
-- Domain logic and business rules (location TBD)
-- Gmail integration and user interface (location TBD)
-- n8n workflow definitions (location TBD)
-- Database schema and migrations (location TBD)
+### Gmail Add-on Module
+- [`/src/gmail-addon/main.js`](src/gmail-addon/main.js) - Main trigger functions and entry points
+- [`/src/gmail-addon/ui-components.js`](src/gmail-addon/ui-components.js) - Reusable UI components with Fluent UI patterns
+- [`/src/gmail-addon/appsscript.json`](src/gmail-addon/appsscript.json) - Google Apps Script manifest and configuration
+- [`/src/gmail-addon/README.md`](src/gmail-addon/README.md) - Gmail addon documentation and setup guide
+
+### Key Modules (Planned)
+- Domain logic and business rules (location TBD during development)
+- n8n workflow definitions (location TBD during development)
+- Database schema and migrations (location TBD during development)
 
 ## Related Documentation
 
 ### Development Setup
 - [`/docs/setup/local-development.md`](docs/setup/local-development.md) - Local environment setup and configuration
 - [`/docs/setup/dependencies.md`](docs/setup/dependencies.md) - Required dependencies and installation
+- [`/DEPLOYMENT.md`](DEPLOYMENT.md) - Gmail add-on deployment guide and instructions
 
 ### Operations
 - [`/docs/deployment/production-setup.md`](docs/deployment/production-setup.md) - Production deployment procedures
