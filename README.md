@@ -1,48 +1,69 @@
 # Gmail Graph-Classifier Add-on
 
-An AI-powered Gmail add-on that classifies email threads into **custom labels**  
-based on a knowledge-graph of People, Projects, Topics and Companies.  
-It uses **n8n** workflows, **Postgres + pgvector** for embeddings, and an **LLM agent** for
-natural-language rule authoring and RAG-based classification.
+## Technical Overview
 
-<div align="center">
-<img src="docs/img/pipeline.png" width="600" alt="High-level pipeline diagram"/>
-</div>
+The Gmail Graph-Classifier Add-on is an AI-powered email classification system that automatically categorizes Gmail threads using custom labels based on a knowledge graph of People, Projects, Topics, and Companies. The system combines natural language processing, graph-based reasoning, and large language model capabilities to provide intelligent email organization.
 
-## Quick Start
+**Business Value**: Reduces email management overhead by automatically applying contextually relevant labels, enabling users to focus on high-priority communications and maintain organized inboxes without manual categorization.
 
-```bash
-git clone https://github.com/your-org/gmail-graph-classifier.git
-cd gmail-graph-classifier
-# follow docs/06_setup_local_dev.md
-```
+**Technical Architecture**: Built on n8n workflow orchestration, PostgreSQL with pgvector for semantic search, and LLM integration for natural language rule authoring and classification decisions. The system operates as a Gmail Add-on using Google Apps Script for user interface and Google Workspace APIs for email access.
 
-| Area                 | Read first                                                    |
-| -------------------- | ------------------------------------------------------------- |
-| What the add-on does | [Overview](docs/01_overview.md)                               |
-| How components talk  | [Architecture](docs/02_architecture.md)                       |
-| Graph schema & SQL   | [Data Model](docs/03_data_model.md)                           |
-| Runtime flow         | [Classification Workflow](docs/04_classification_workflow.md) |
-| Writing NL rules     | [Rules Authoring](docs/05_rules_authoring.md)                 |
-| Dev env              | [Local Setup](docs/06_setup_local_dev.md)                     |
-| Ship to prod         | [Deployment Guide](docs/07_deployment_guide.md)               |
-| GDPR & SOC-2         | [Security & Privacy](docs/08_security_privacy.md)             |
-| Chat UI details      | [Chat-First UI](docs/10_chat_ui.md)                           |
-| UI/UX standards      | [Design Guidelines](docs/11_ui_ux_guidelines.md)              |
-| Coding standards     | [Development Practices](docs/12_coding_practices.md)          |
-| Troubleshooting      | [FAQ](docs/09_faq.md)                                         |
+## Project Architecture
+
+The system follows a layered architecture with clear separation of concerns:
+
+- **Presentation Layer**: Gmail Add-on interface built with Google Apps Script
+- **Orchestration Layer**: n8n workflows managing classification processes
+- **Domain Layer**: Core business logic for rule evaluation and classification
+- **Data Layer**: PostgreSQL with pgvector for graph storage and semantic search
+- **Integration Layer**: LLM APIs for natural language processing and decision making
+
+## Documentation Navigation
+
+### Architecture Guidelines
+- [`/docs/architecture/system-design.md`](docs/architecture/system-design.md) - Core system architecture and component relationships
+- [`/docs/architecture/data-flow.md`](docs/architecture/data-flow.md) - Data processing workflows and information flow
+- [`/docs/architecture/integration-patterns.md`](docs/architecture/integration-patterns.md) - External system integrations and API contracts
+
+### Design Guidelines
+- [`/docs/design/ui-specifications.md`](docs/design/ui-specifications.md) - UI component specifications and interface standards
+- [`/docs/design/ux-workflows.md`](docs/design/ux-workflows.md) - User experience workflows and interaction patterns
+- [`/docs/design/design-system.md`](docs/design/design-system.md) - Visual design standards and component library
+
+### Implementation Guidelines
+- [`/docs/implementation/coding-standards.md`](docs/implementation/coding-standards.md) - Development practices and code quality standards
+- [`/docs/implementation/testing-strategy.md`](docs/implementation/testing-strategy.md) - Testing approaches and quality assurance
+- [`/docs/implementation/api-contracts.md`](docs/implementation/api-contracts.md) - Interface definitions and service contracts
+
+## Source Code Navigation
+
+*Note: Source code directories will be established during development phase*
+
+### Core Components
+- `/src/` - Main source code directory (to be created)
+- `/tests/` - Test suites and quality assurance (to be created)
+- `/docs/` - Project documentation and guidelines
+
+### Key Modules
+- Domain logic and business rules (location TBD)
+- Gmail integration and user interface (location TBD)
+- n8n workflow definitions (location TBD)
+- Database schema and migrations (location TBD)
+
+## Related Documentation
+
+### Development Setup
+- [`/docs/setup/local-development.md`](docs/setup/local-development.md) - Local environment setup and configuration
+- [`/docs/setup/dependencies.md`](docs/setup/dependencies.md) - Required dependencies and installation
+
+### Operations
+- [`/docs/deployment/production-setup.md`](docs/deployment/production-setup.md) - Production deployment procedures
+- [`/docs/deployment/monitoring.md`](docs/deployment/monitoring.md) - System monitoring and observability
+
+### Reference
+- [`/docs/reference/navigation-guidelines.md`](docs/reference/navigation-guidelines.md) - Documentation navigation and cross-reference standards
+- [`/docs/reference/glossary.md`](docs/reference/glossary.md) - Technical terminology and definitions
 
 ---
 
-### Contributing
-
-1. **Fork** → create feature branch → **PR** to `main`.
-2. Code style: `eslint --fix` for Apps Script, `black` for Python nodes.
-3. All new n8n workflows need a unit test in `/tests`.
-
----
-
-### License
-
-MIT © 2025 Your Company
-
+**Documentation Standards**: All documentation files include bidirectional navigation links and cross-references to related sections. See [`/docs/reference/navigation-guidelines.md`](docs/reference/navigation-guidelines.md) for complete navigation standards.
