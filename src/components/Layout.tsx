@@ -3,17 +3,8 @@ import {
   FluentProvider,
   webLightTheme,
   webDarkTheme,
-  TabList,
-  Tab,
-  TabValue,
   Text,
 } from '@fluentui/react-components';
-import { 
-  HomeRegular, 
-  MailRegular, 
-  ChatRegular, 
-  SettingsRegular 
-} from '@fluentui/react-icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAppStore } from '@/stores/appStore';
 
@@ -27,16 +18,14 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { theme } = useAppStore();
 
   const tabs = [
-    { value: '/', icon: HomeRegular, label: 'Dashboard' },
-    { value: '/classify', icon: MailRegular, label: 'Classify' },
-    { value: '/chat', icon: ChatRegular, label: 'Chat Assistant' },
-    { value: '/settings', icon: SettingsRegular, label: 'Settings' },
+    { value: '/', label: 'Dashboard' },
+    { value: '/classify', label: 'Classify' },
+    { value: '/chat', label: 'Chat Assistant' },
+    { value: '/settings', label: 'Settings' },
   ];
 
-  const selectedValue = location.pathname as TabValue;
-
-  const handleTabSelect = (_: unknown, data: { value: TabValue }) => {
-    navigate(data.value as string);
+  const handleTabClick = (path: string) => {
+    navigate(path);
   };
 
   return (
@@ -45,18 +34,21 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div style={{ width: '280px', backgroundColor: '#f5f5f5', padding: '16px' }}>
           <Text size={500} weight="semibold">Gmail Classifier</Text>
           <nav style={{ marginTop: '16px' }}>
-            <TabList
-              selectedValue={selectedValue}
-              onTabSelect={handleTabSelect}
-              vertical
-            >
-              {tabs.map((tab) => (
-                <Tab key={tab.value} value={tab.value}>
-                  <tab.icon />
-                  {tab.label}
-                </Tab>
-              ))}
-            </TabList>
+            {tabs.map((tab) => (
+              <div
+                key={tab.value}
+                onClick={() => handleTabClick(tab.value)}
+                style={{
+                  padding: '8px 12px',
+                  cursor: 'pointer',
+                  backgroundColor: location.pathname === tab.value ? '#e0e0e0' : 'transparent',
+                  borderRadius: '4px',
+                  marginBottom: '4px'
+                }}
+              >
+                <Text>{tab.label}</Text>
+              </div>
+            ))}
           </nav>
         </div>
         <main style={{ flex: '1', padding: '24px', overflow: 'auto' }}>
